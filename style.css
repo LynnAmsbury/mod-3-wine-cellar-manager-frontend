@@ -1,3 +1,16 @@
 body {
     font-family: 'Fondamento', cursive;
 }
+
+#wine-card-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.wine-card {
+    box-shadow: 0 0 3px grey;
+    margin: 1rem;
+    padding: 1rem;
+    width: 10rem;
+}
