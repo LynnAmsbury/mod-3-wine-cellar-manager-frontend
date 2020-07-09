@@ -1,19 +1,9 @@
 body {
-    background-image: url("./assets/wine_cellar_doors_drawing_to_right_2.png");
+    background-image: url("../assets/wine_cellar_doors_drawing_to_right_2.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     height: 40rem;
     font-family: 'Fondamento', cursive;
     padding: 0 5rem 0 10rem;
-}
-
-main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#wines-list_ul {
-
 }
