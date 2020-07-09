@@ -5,6 +5,7 @@ body {
     background-size: contain;
     height: 40rem;
     font-family: 'Fondamento', cursive;
+    padding-left: 5rem;
 }
 
 #wine-card-section {

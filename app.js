@@ -1,49 +1,9 @@
 const baseURL = 'http://localhost:7000';
 const winesURL = `${baseURL}/wines`;
 
-fetch(winesURL)
-    .then(parseJSON)
-    .then(displayWinesList); // To display wines as a list
-    // .then(showWineCards); // To display wines as cards
-
 function parseJSON(response) {
     return response.json();
 }
-
-// From Stack Overflow
-// var submit = document.getElementById("submit");
-// var input = document.getElementById("input");
-
-// submit.addEventListener("click", function(){
-//   var listUl = document.getElementById("list");
-//   var listLi = document.createElement("li");
-//   var value = input.value;
-//   listUl.appendChild(listLi)
-//   listLi.textContent = value;
-//   gettingThisLi();
-// });
-
-// var print = function(){
-//   console.log(this.innerHTML)
-//   };
-
-// function gettingThisLi(){
-//   var lis = document.querySelectorAll("li");
-
-//   for (var i = 0; i < lis.length; i++){
-//    var listElement = lis[i];
-//    listElement.removeEventListener("click",print);
-//    listElement.addEventListener("click",print);
-//  }
-  
-// }
-
-// <input type="text" id="input"></input>
-// <button id="submit" type="submit"> Submit </button>
-
-//   <ul id ="list">
-
-//   </ul>
 
 // Display varietals list
 const varietalsArray = ["Cabernet Sauvignon", "Pinot Noir", "Zinfandel"]
@@ -62,11 +22,26 @@ function varietalsList() {
     })
 }
 
-function showWineList() {
+function showWineList(event) {
     console.log(event.target.innerText) // is working when varietal is listed
     // Take event.target.innerText; use it to sort through the fetch response and return the wine for which the varietal matches the clicked-on varietal in varietalList
-    
+    fetch(winesURL)
+        .then(parseJSON)
+        .then(result => sortWinesList(result, event.target.innerText));
+     
 }
+
+function sortWinesList(allWinesList, varietal) {
+
+    const sortedWineList = allWinesList.filter(wine => {
+        if (wine.varietal == varietal) {
+            return wine
+        }
+        
+    })
+    displayWinesList(sortedWineList)
+}
+
 
 const winesList = document.getElementById('wines-list-ul');
 
