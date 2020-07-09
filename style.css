@@ -1,4 +1,9 @@
 body {
+    background-image: url("wine_cellar_doors_drawing_to_right_2.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 40rem;
     font-family: 'Fondamento', cursive;
 }
 
