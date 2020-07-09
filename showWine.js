@@ -37,9 +37,3 @@ function renderWineData(varietal, producer, region, vintage, number_in_collectio
     
     individualWine.append(varietalElement, producerElement, regionElement, vintageElement, numberInCollectionElement)
 }
-
-function renderPower(power){
-    const heroinePower = document.createElement('h2')
-    heroinePower.innerHTML = `<a href=indexPower.html?id=${power.id}>${power.name}</a>`
-    individualHeroine.append(heroinePower)
-}
