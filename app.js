@@ -1,8 +1,6 @@
 const baseURL = 'http://localhost:7000';
 const winesURL = `${baseURL}/wines`;
 
-// const open = document.getElementById("open")
-
 function parseJSON(response) {
     return response.json();
 }
@@ -14,8 +12,7 @@ function getAllWines() {
 getAllWines().then((response) => {
     varietalsList(response);
 })
-// Display varietals list
-// const varietalsArray = ["Cabernet Sauvignon", "Pinot Noir", "Zinfandel"]
+
 const varietalsListUl = document.getElementById("varietals-list-ul")
 
 function varietalsList(wines) {
@@ -36,7 +33,6 @@ function showWineList(event) {
     fetch(winesURL)
         .then(parseJSON)
         .then(result => sortWinesList(result, event.target.innerText));
-     
 }
 
 function sortWinesList(allWinesList, varietal) {
@@ -52,11 +48,8 @@ function sortWinesList(allWinesList, varietal) {
 
 const winesList = document.getElementById('wines-list-ul');
 
-// Functionality to display indes wines list as a ul list
 function displayWinesList(wines) {
-    // console.log(wines)
     wines.map(wine => {
-        // console.log(wine)
         const wineData = document.createElement('li');
         wineData.innerHTML = `<a href=showWine/showWine.html?id=${wine.id}>${wine.varietal}, ${wine.producer}, ${wine.region}, ${wine.vintage}</a>`
         winesList.innerHTML = '';

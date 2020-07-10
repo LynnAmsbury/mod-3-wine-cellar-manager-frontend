@@ -365,3 +365,7 @@ body {
     font-family: 'Fondamento', cursive;
     padding: 0 5rem 0 10rem;
 }
+
+footer {
+    font-size: 2rem;
+}
