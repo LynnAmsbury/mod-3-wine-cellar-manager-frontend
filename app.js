@@ -1,6 +1,10 @@
 const baseURL = 'http://localhost:7000';
 const winesURL = `${baseURL}/wines`;
 
+const varietalsListUl = document.getElementById('varietals-list-ul')
+const winesList = document.getElementById('wines-list-ul');
+const addNewWine = document.getElementById('add-wine-form')
+
 function parseJSON(response) {
     return response.json();
 }
@@ -14,7 +18,6 @@ getAllWines().then((response) => {
     varietalsList(response);
 })
 
-const varietalsListUl = document.getElementById("varietals-list-ul")
 function getDeduplicatedWines(wines, propertyToDeduplicateBy) {
     return wines.reduce((accumulator, currentWine) => {
         const matches = accumulator.filter(currentWineInAccumulator => {
@@ -55,7 +58,6 @@ function sortWinesList(allWinesList, varietal) {
     displayWinesList(sortedWineList)
 }
 
-const winesList = document.getElementById('wines-list-ul');
 function displayWinesList(wines) {
     winesList.innerHTML = '';
     wines.map(wine => {
