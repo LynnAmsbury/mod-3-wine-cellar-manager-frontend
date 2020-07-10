@@ -1,13 +1,15 @@
 const baseURL = 'http://localhost:7000';
 const winesURL = `${baseURL}/wines`;
 
+const open = document.getElementById("open")
+
 function parseJSON(response) {
     return response.json();
 }
 
 // Display varietals list
 const varietalsArray = ["Cabernet Sauvignon", "Pinot Noir", "Zinfandel"]
-const varietalsUl = document.getElementById("varietals-list")
+const varietalsListUl = document.getElementById("varietals-list-ul")
 
 varietalsList()
 
@@ -18,7 +20,7 @@ function varietalsList() {
         li.addEventListener("click", (event) => {
             showWineList(event)
         })
-        varietalsUl.append(li)
+        varietalsListUl.append(li)
     })
 }
 
