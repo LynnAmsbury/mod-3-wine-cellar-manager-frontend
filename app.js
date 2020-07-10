@@ -1,9 +1,9 @@
 const baseURL = 'http://localhost:7000';
 const winesURL = `${baseURL}/wines`;
 
-const varietalsListUl = document.getElementById('varietals-list-ul')
+const varietalsListUl = document.getElementById('varietals-list-ul');
 const winesList = document.getElementById('wines-list-ul');
-const addNewWine = document.getElementById('add-wine-form')
+const addNewWine = document.getElementById('add-wine-form');
 
 function parseJSON(response) {
     return response.json();
@@ -66,3 +66,34 @@ function displayWinesList(wines) {
         winesList.append(wineData);
     })
 }
+
+addNewWine.addEventListener('submit', makeNewWine);
+
+function makeNewWine(event) {
+    event.preventDefault(); 
+    
+    const wineFormData = new FormData(event.target);
+    const varietal = wineFormData.get('varietal');
+    const producer = wineFormData.get('producer');
+    const region = wineFormData.get('region');
+    const vintage = wineFormData.get('vintage');
+    const numberInCollection = wineFormData.get('number-in-collection');
+
+    console.log(varietal, producer, region, vintage, numberInCollection)
+
+    fetch(winesURL, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+                varietal: varietal,
+                producer: producer,
+                region: region,
+                vintage: vintage,
+                number_in_collection: numberInCollection
+            })
+        })
+            .then(parseJSON)
+            .then(console.log);
+    }
