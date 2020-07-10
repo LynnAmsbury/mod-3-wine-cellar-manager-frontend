@@ -17,59 +17,36 @@
     </header>
 
     <main>
-        <ul id="varietals-list-ul">
+        <div>
             <h2>Varietals List</h2>
-        </ul>
-        <ul id="wines-list-ul"></ul>
+            <ul id="varietals-list-ul" class="de-list"></ul>
+            <ul id="wines-list-ul" class="de-list"></ul>
+        </div>
         <form id="add-wine-form">
             <h2>Add New Wines</h2>
             <label for="varietal">
                 <h3>Varietal Type:</h3>
             </label>
-            <input
-                type="text"
-                id="varietal"
-                name="varietal"
-                placeholder="Varietal Type"
-            />
+            <input type="text" id="varietal" name="varietal" placeholder="Varietal Type" />
             <label for="producer">
                 <h3>Producer:</h3>
             </label>
-            <input
-                type="text"
-                id="producer"
-                name="producer"
-                placeholder="Producer"
-            />
+            <input type="text" id="producer" name="producer" placeholder="Producer" />
             <label for="region">
                 <h3>Region:</h3>
             </label>
-            <input
-                type="text"
-                id="region"
-                name="region"
-                placeholder="Region of Origin"
-            />
+            <input type="text" id="region" name="region" placeholder="Region of Origin" />
             <label for="vintage">
                 <h3>Vintage:</h3>
             </label>
-            <input
-                type="number"
-                id="vintage"
-                name="vintage"
-                placeholder="Vintage"/>
+            <input type="number" id="vintage" name="vintage" placeholder="Vintage" />
             <label for="number-in-collection">
                 <h3>Number to Add:</h3>
             </label>
-            <input 
-                type="number"
-                id="number-in-collection"
-                name="number-in-collection"
-                placeholder="Number to Add"
-            />
+            <input type="number" id="number-in-collection" name="number-in-collection" placeholder="Number to Add" />
             <br>
             <br>
-            <input type="submit" value="Add New Wine"/>
+            <input type="submit" value="Add New Wine" />
         </form>
         <!-- <section id="wine-card-section"></section> -->
     </main>
